@@ -1,0 +1,36 @@
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import cross_val_score
+
+names=['sepal_length','sepal_width','petal_length','petal_width','class']
+
+df=pd.read_csv(r"C:\Users\x5748\OneDrive\桌面\data\iris.data",header=None,names=names)
+# \ 在python中會轉義，需加上r
+
+#查看資料的基本信息
+df.head()
+df.describe()
+df.info()
+
+#繪圖
+plt.style.use('ggplot')
+sns.lmplot("sepal_length","sepal_width",data=df,fit_reg=False,hue="class")
+
+X=df.iloc[:,:-1].values
+Y=df.iloc[:,4].values
+# create design matrix X and target vector Y
+X_train,X_test,y_train,y_test=train_test_split(X,Y,test_size=0.33,random_state=42)
+# split data into train and test 
+# test_size is a part of data for testing
+#random_state is random seed
+
+knn=KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+pred=knn.predict(X_test)
+accuracy_score(y_test,pred)
+scores=cross_val_score(knn,X_train,y_train,cv=10,scoring='accuracy')
