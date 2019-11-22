@@ -238,7 +238,7 @@ sys.path.append("D:/bin")
 #graph.write_png('1.png')
 
 
-
+# <a href="https://ibb.co/h28HqZW"><img src="https://i.ibb.co/nQkfWnc/1.png" alt="1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>free upload pic</a><br />
 
 
 
