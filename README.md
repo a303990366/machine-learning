@@ -37,7 +37,9 @@
 ### 1.期中考
 
 ## 第十一週:
-### 1.決策樹實作
-### 2.學習隨機森林、XGBOOST、ADABOOST
+### .學習隨機森林、XGBOOST、ADABOOST
+### 2.實作決策樹、隨機森林、XGBOOST、ADABOOST
 
-
+## 第十二週:
+### 1. 學習SVM
+### 2. 實作SVM
